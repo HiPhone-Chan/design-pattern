@@ -1,7 +1,8 @@
-package com.chf.design.pattern.build.factory.v3;
+package com.chf.design.pattern.build.factory.v4;
 
 /**
- * 工厂方法
+ * 抽象工厂
+ * 
  * @author c00251918
  *
  */
@@ -12,6 +13,9 @@ public class Client {
 	public void send(String content, String type) {
 		Sender sender = factory.getSender(type);
 		sender.send(content);
+
+		Product product = factory.getProduct(type);
+		product.operate(content);
 	}
 
 	public Factory getFactory() {

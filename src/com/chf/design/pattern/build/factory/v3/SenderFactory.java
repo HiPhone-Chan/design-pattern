@@ -1,6 +1,6 @@
 package com.chf.design.pattern.build.factory.v3;
 
-public class FactoryA implements Factory {
+public class SenderFactory implements Factory {
 
 	public Sender getSender(String type) {
 		switch (type) {
