@@ -7,9 +7,7 @@ public class Client {
 	public void operator() {
 		float price = 1000;
 
-		Decorator decorator = new DiscountC(new DiscountB(new DiscountA()));
-
-		float priceAfter = decorator.discount(price);
+		float priceAfter = discount.discount(price);
 
 		System.out.println(priceAfter);
 	}
@@ -20,6 +18,8 @@ public class Client {
 
 	public static void main(String[] args) {
 		Client client = new Client();
+		Decorator decorator = new DiscountC(new DiscountB(new DiscountA()));
+		client.setDiscount(decorator);
 		client.operator();
 	}
 
